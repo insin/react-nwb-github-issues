@@ -55,7 +55,7 @@ export default React.createClass({
         </ul>
       </div>
 
-      {React.cloneElement(this.props.children, {user})}
+      {this.props.children && React.cloneElement(this.props.children, {user})}
     </div>
   }
 })

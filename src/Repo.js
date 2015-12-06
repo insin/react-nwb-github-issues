@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router'
 import Icon from 'react-fa'
-import TimeAgo from 'react-timeago'
 
 let fetchRepo = (user, repoName, cb) => {
   window.fetch(`https://api.github.com/repos/${user}/${repoName}`)
@@ -36,18 +35,7 @@ export default React.createClass({
         </h1>
       </div>
 
-      <ul className="repo-issues">
-        {repo.issues.map(issue =>
-        <li>
-          <Icon name="bug"/>
-          <div className="comments"><Icon name="comment-o"/> {issue.comments}</div>
-          <h3><a href="#TODO">{issue.title}</a></h3>
-          <p className="details">
-            #{issue.number} opened <TimeAgo date={issue.created_at}/> by <a href="#TODO">{issue.user.login}</a>
-          </p>
-        </li>
-        )}
-      </ul>
+      {this.props.children && React.cloneElement(this.props.children, {repo})}
     </div>
   }
 })

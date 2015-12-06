@@ -10,7 +10,10 @@ render(
     <Route path="/" component={require('./App')}>
       <Route path=":username" component={require('./User')}>
         <IndexRoute component={require('./RepoList')}/>
-        <Route path=":repo_name" component={require('./Repo')}/>
+        <Route path=":repo_name" component={require('./Repo')}>
+          <IndexRoute component={require('./IssueList')}/>
+          <Route path=":issue_number" component={require('./Issue')}/>
+        </Route>
       </Route>
     </Route>
   </Router>,
