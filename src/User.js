@@ -1,24 +1,12 @@
 import React from 'react'
 import Icon from 'react-fa'
 
-let fetchUser = (username, cb) => {
-  window.fetch(`https://api.github.com/users/${username}`)
-    .then(res => res.json())
-    .then(user => {
-      window.fetch(`https://api.github.com/users/${user.login}/repos?sort=pushed&direction=desc&per_page=100`)
-        .then(res => res.json())
-        .then(repos => {
-          user.repos = repos
-          cb(null, {user})
-        })
-    })
-  .catch(err => cb(err))
-}
+import {fetchUser} from './api'
 
 export default React.createClass({
   statics: {
     loadProps(params, cb) {
-      fetchUser(params.username, cb)
+      fetchUser(params, cb)
     }
   },
   render() {

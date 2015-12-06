@@ -2,21 +2,8 @@ import React from 'react'
 import {Link} from 'react-router'
 import TimeAgo from 'react-timeago'
 
+import {fetchIssue} from './api'
 import IssueComment from './IssueComment'
-
-let fetchIssue = ({username, repo_name, issue_number}, cb) => {
-  window.fetch(`https://api.github.com/repos/${username}/${repo_name}/issues/${issue_number}`)
-    .then(res => res.json())
-    .then(issue => {
-      window.fetch(`https://api.github.com/repos/${username}/${repo_name}/issues/${issue_number}/comments`)
-        .then(res => res.json())
-        .then(comments => {
-          issue.comments = comments
-          cb(null, {issue})
-        })
-    })
-  .catch(err => cb(err))
-}
 
 export default React.createClass({
   statics: {

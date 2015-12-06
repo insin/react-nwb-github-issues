@@ -2,24 +2,12 @@ import React from 'react'
 import Icon from 'react-fa'
 import {Link} from 'react-router'
 
-let fetchRepo = (user, repoName, cb) => {
-  window.fetch(`https://api.github.com/repos/${user}/${repoName}`)
-    .then(res => res.json())
-    .then(repo => {
-      window.fetch(`https://api.github.com/repos/${user}/${repo.name}/issues?per_page=10`)
-        .then(res => res.json())
-        .then(issues => {
-          repo.issues = issues
-          cb(null, {repo})
-        })
-    })
-  .catch(err => cb(err))
-}
+import {fetchRepo} from './api'
 
 export default React.createClass({
   statics: {
     loadProps(params, cb) {
-      fetchRepo(params.username, params.repo_name, cb)
+      fetchRepo(params, cb)
     }
   },
   render() {
