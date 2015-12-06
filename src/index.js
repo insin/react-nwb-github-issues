@@ -4,9 +4,12 @@ import React from 'react'
 import {render} from 'react-dom'
 import AsyncProps from 'async-props'
 import {Router, Route, IndexRoute} from 'react-router'
+import {createHashHistory} from 'history'
+
+let history = createHashHistory({queryKey: false})
 
 render(
-  <Router RoutingContext={AsyncProps} renderLoading={() => <div>Loading...</div>}>
+  <Router history={history} RoutingContext={AsyncProps} renderLoading={() => <div>Loading...</div>}>
     <Route path="/" component={require('./App')}>
       <Route path=":username" component={require('./User')}>
         <IndexRoute component={require('./RepoList')}/>
