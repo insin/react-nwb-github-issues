@@ -8,7 +8,7 @@ You will need the following things properly installed on your computer.
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with npm)
-* [nwb](https://github.com/insin/nwb/) - `npm install -g nwb`
+* [nwb](https://github.com/insin/nwb/) - `npm install -g nwb@next`
 
 ## Installation
 
