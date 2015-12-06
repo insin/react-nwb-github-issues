@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router'
 
 import Icon from 'react-fa'
 import TimeAgo from 'react-timeago'
@@ -16,7 +17,7 @@ export default React.createClass({
             <li><Icon name="code-fork"/> {repo.forks_count}</li>
             <li><Icon name="bug"/> {repo.open_issues_count}</li>
           </ul>
-          <h3><a href="#TODO">{repo.name}</a></h3>
+          <h3><Link to={`/${user.login}/${repo.name}`}>{repo.name}</Link></h3>
           {repo.description &&
             <p className="description">The source for {repo.description}</p>
           }

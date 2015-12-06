@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router'
 import Icon from 'react-fa'
 import TimeAgo from 'react-timeago'
 
@@ -30,9 +30,9 @@ export default React.createClass({
         <h1>
           <Icon name="book"/>
           {' '}
-          <span className="user"><a href="#TODO">{repo.owner.login}</a></span>
+          <span className="user"><Link to={`/${repo.owner.login}`}>{repo.owner.login}</Link></span>
           {' / '}
-          <span className="repo"><a href="#TODO">{repo.name}</a></span>
+          <span className="repo"><Link to={`/${repo.owner.login}/${repo.name}`}>{repo.name}</Link></span>
         </h1>
       </div>
 
