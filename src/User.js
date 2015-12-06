@@ -54,25 +54,8 @@ export default React.createClass({
           <li className="active"><Icon name="book"/> Repositories <span className="badge">{user.public_repos}</span></li>
         </ul>
       </div>
-      <ul className="user-repos">
-        {user.repos.map(repo =>
-        <li key={repo.name}>
-          <ul className="repo-info">
-            <li>CSS</li>
-            <li><i className="fa fa-star"></i> 151</li>
-            <li><i className="fa fa-code-fork"></i> 415</li>
-            <li><i className="fa fa-bug"></i> 29</li>
-          </ul>
-          <h3><a href="#TODO">{repo.name}</a></h3>
-          {repo.description &&
-            <p className="description">The source for {repo.description}</p>
-          }
-          <p className="updated">Updated 2015-10-27T20:09:06Z</p>
-        </li>
-        )}
-      </ul>
 
-      {this.props.children}
+      {React.cloneElement(this.props.children, {user})}
     </div>
   }
 })
