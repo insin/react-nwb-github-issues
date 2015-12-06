@@ -1,3 +1,6 @@
+require('es6-promise').polyfill()
+require('whatwg-fetch')
+
 require('./app.scss')
 
 import React from 'react'
