@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "react": "~0.14.0",
-    "react-dom": "~0.14.0"
+    "react-dom": "~0.14.0",
+    "react-fa": "^4.0.0"
   },
   "devDependencies": {
     "eslint-config-jonnybuchanan": "^2.0.1",
