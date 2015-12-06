@@ -11,8 +11,9 @@ export default React.createClass({
       </Link>
       <div className="comment">
         <p className="comment-header">
-          <span className="user"><Link to={`/${comment.user.login}`}>{comment.user.login}</Link></span>
-          commented <TimeAgo date={comment.created_at}/>
+          <span className="user">
+            <Link to={`/${comment.user.login}`}>{comment.user.login}</Link>
+          </span> commented <TimeAgo date={comment.created_at}/>
         </p>
         <div className="comment-body">
           {comment.body}
