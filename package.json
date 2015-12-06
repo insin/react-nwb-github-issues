@@ -1,0 +1,22 @@
+{
+  "name": "react-nwb-github-issues",
+  "version": "0.0.1",
+  "description": "Describe react-nwb-github-issues here",
+  "private": true,
+  "scripts": {
+    "build": "nwb build",
+    "clean": "nwb clean",
+    "start": "nwb serve",
+    "test": "nwb test"
+  },
+  "dependencies": {
+    "react": "~0.14.0",
+    "react-dom": "~0.14.0"
+  },
+  "devDependencies": {
+    "nwb": "~0.3.0-beta.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": ""
+}
