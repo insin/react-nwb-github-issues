@@ -3,11 +3,11 @@ require('whatwg-fetch')
 
 require('./app.scss')
 
+import AsyncProps from 'async-props'
+import {createHashHistory} from 'history'
 import React from 'react'
 import {render} from 'react-dom'
-import AsyncProps from 'async-props'
 import {Router, Route, IndexRoute} from 'react-router'
-import {createHashHistory} from 'history'
 import useScroll from 'scroll-behavior/lib/useStandardScroll'
 
 let history = useScroll(createHashHistory)()

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Icon from 'react-fa'
 
 let fetchUser = (username, cb) => {

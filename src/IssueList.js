@@ -1,7 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router'
-
 import Icon from 'react-fa'
+import {Link} from 'react-router'
 import TimeAgo from 'react-timeago'
 
 export default React.createClass({

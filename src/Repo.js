@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router'
 import Icon from 'react-fa'
+import {Link} from 'react-router'
 
 let fetchRepo = (user, repoName, cb) => {
   window.fetch(`https://api.github.com/repos/${user}/${repoName}`)
