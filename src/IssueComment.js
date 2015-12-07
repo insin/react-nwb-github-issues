@@ -1,3 +1,4 @@
+import marked from 'marked'
 import React from 'react'
 import {Link} from 'react-router'
 import TimeAgo from 'react-timeago'
@@ -15,9 +16,7 @@ export default React.createClass({
             <Link to={`/${comment.user.login}`}>{comment.user.login}</Link>
           </span> commented <TimeAgo date={comment.created_at}/>
         </p>
-        <div className="comment-body">
-          {comment.body}
-        </div>
+        <div className="comment-body" dangerouslySetInnerHTML={{__html: marked(comment.body)}}/>
       </div>
     </div>
   }
