@@ -14,7 +14,7 @@ export default React.createClass({
     return <div>
       <div className="user-header">
         <img className="avatar" height="120" src={`${user.avatar_url}&s=240`} width="120"/>
-        <h1>{user.name}</h1>
+        <h1>{user.name || user.login}</h1>
         <ul className="user-details">
           {user.company &&
             <li>
