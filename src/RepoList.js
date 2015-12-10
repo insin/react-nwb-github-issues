@@ -18,7 +18,7 @@ export default React.createClass({
           </ul>
           <h3><Link to={`/${user.login}/${repo.name}`}>{repo.name}</Link></h3>
           {repo.description &&
-            <p className="description">The source for {repo.description}</p>
+            <p className="description">{repo.description}</p>
           }
           <p className="updated">Updated <TimeAgo date={repo.pushed_at}/></p>
         </li>
