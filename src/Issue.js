@@ -25,7 +25,7 @@ export default React.createClass({
       <div className="issue-comments">
         <IssueComment comment={issue}/>
         {issue.comments.map(comment =>
-          <IssueComment comment={comment}/>
+          <IssueComment key={comment.id} comment={comment}/>
         )}
       </div>
     </div>
