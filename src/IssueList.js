@@ -8,7 +8,7 @@ export default React.createClass({
     let {repo} = this.props
     return <ul className="repo-issues">
       {repo.issues.map(issue =>
-      <li>
+      <li key={issue.number}>
         <Icon name="bug"/>
         <div className="comments"><Icon name="comment-o"/> {issue.comments}</div>
         <h3><Link to={`/${repo.owner.login}/${repo.name}/${issue.number}`}>{issue.title}</Link></h3>
